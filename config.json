@@ -1,0 +1,5 @@
+
+{
+   "connectionString": "mongodb+srv://chiamaka:codenaija@cluster0-lncsu.mongodb.net/test?retryWrites=true&w=majority",
+   "secret": "1234567"
+}
