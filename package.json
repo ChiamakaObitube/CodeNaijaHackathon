@@ -4,9 +4,10 @@
   "description": "tech for social good",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=codenaija-hackathon:* npm run build && node build/bin/www.js",
+    "start": "DEBUG=codenaija-hackathon:* node build/bin/www.js",
     "start-dev": "DEBUG=codenaija-hackathon:* nodemon --exec babel-node src/bin/www.js",
-    "build": "babel src -d build"
+    "build": "rm -rf build && babel src -d build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
