@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 require('mongoose-type-url');
 import cors from 'cors';
 
-import indexRouter from './routes/index';
+import indexRouter from './routes';
 import reportsRouter from './routes/reports';
 
 import {config} from "dotenv";
@@ -15,8 +15,8 @@ config();
 require('rootpath')();
 const app = express();
 const bodyParser = require('body-parser');
-const jwt = require('_helpers/jwt');
-const errorHandler = require('_helpers/errorHandler');
+const jwt = require('src/_helpers/jwt');
+const errorHandler = require('src/_helpers/errorHandler');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -58,7 +58,7 @@ const reportsModel = reportModel({Schema, Url: SchemaTypes.Url, model});
 
 app.use('/api/v1/reports', reportsRouter(express.Router(), reportsModel));
 app.use('/', indexRouter(express.Router()));
-app.use('/api/v1/users', require('./users/users.controller'));
+app.use('/api/v1/users', require('./Users/users.controller'));
 
 // global error handler
 app.use(errorHandler);

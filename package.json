@@ -4,8 +4,9 @@
   "description": "tech for social good",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/www.js",
-    "start-dev": "DEBUG=codenaija-hackathon:* nodemon --exec babel-node bin/www.js"
+    "start": "DEBUG=codenaija-hackathon:* node build/bin/www.js",
+    "start-dev": "DEBUG=codenaija-hackathon:* nodemon --exec babel-node src/bin/www.js",
+    "build": "babel src -d build"
   },
   "repository": {
     "type": "git",
@@ -20,29 +21,32 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "express-jwt": "^5.3.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongodb": "^3.3.3",
-    "rootpath": "^0.1.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "^2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
     "mongoose-type-url": "^1.0.6",
     "morgan": "~1.9.1",
+    "rootpath": "^0.1.2",
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4",
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.4.4",
     "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.6.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.2"
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.19.4"
   }
 }
