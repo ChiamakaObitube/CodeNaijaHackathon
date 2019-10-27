@@ -14,7 +14,7 @@ export default class ReportController{
         const data = await reportsModel.create({...req.body});
         return res.status(201).json({
             data,
-            message: "All reports fetched successfully",
+            message: "Report submitted successfully",
             status: "REPORTS_CREATE_OK"
         })
     }
